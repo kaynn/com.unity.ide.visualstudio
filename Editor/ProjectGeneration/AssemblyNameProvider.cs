@@ -76,7 +76,7 @@ namespace Microsoft.Unity.VisualStudio.Editor
 					yield return new Assembly(
 						assembly.name,
 						outputPath,
-						assembly.sourceFiles,
+						assembly.sourceFiles.OrderBy(x => x).ToArray(),
 						assembly.defines,
 						assembly.assemblyReferences,
 						assembly.compiledAssemblyReferences,
